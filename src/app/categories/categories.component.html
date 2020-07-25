@@ -1,8 +1,20 @@
 <h2>Choose The Category</h2>
 <ul class="categories">
-    <li *ngFor="let category of categories">
+    <li *ngFor="let category of categories" (click)="onSelect(category)">
         <span class="badge">
             {{category.id}}
         </span> {{category.name}}
     </li>
 </ul>
+
+<div *ngIf="selectedCategory">
+
+    <h2>{{selectedCategory.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{selectedCategory.id}}</div>
+    <div>
+        <label>name:
+            <input [(ngModel)]="selectedCategory.name" placeholder="name"/>
+        </label>
+    </div>
+
+</div>
