@@ -1,8 +1,10 @@
 <div class="container">
-    <div class="row">
-        <div *ngFor="let category of categories"
-            class="col-6">
-            <app-category-button [category]="category"></app-category-button>
-        </div>
+  <div class="row">
+    <div *ngFor="let category of categories" 
+      class="col-6 mb-6">
+      <div class="mt-5">
+        <app-category-button [category]="category"></app-category-button>
+      </div>
     </div>
+  </div>
 </div>

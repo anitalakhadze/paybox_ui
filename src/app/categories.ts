@@ -1,8 +1,8 @@
 import { Category } from './category';
 
 export const CATEGORIES: Category[] = [
-    { id:'mobile_payments', name:'Mobile payments'},
-    { id:'charity_payments', name:'Charity payments'},
-    { id:'personal_payments', name:'Personal payments'},
-    { id:'misc_payments', name:'Misc payments'},
+    { id:'mobile_payment', name:'Mobile payment'},
+    { id:'charity_payment', name:'Charity payment'},
+    { id:'communal_payment', name:'Communal payment'},
+    { id:'financial_payment', name:'Financial payment'},
 ]

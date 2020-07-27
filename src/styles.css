@@ -3,4 +3,15 @@
 
 .btn {
     background-image: linear-gradient(to right,#8edc12 0%,#05afe9 100%);
+    border: none;
+}
+
+.toolbar {
+    background-image: linear-gradient(to right,#8edc12 0%,#05afe9 100%);
+}
+
+* {
+    text-align: center;
+    color: white;
+    font-weight: bold;
 }
