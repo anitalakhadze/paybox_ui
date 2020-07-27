@@ -1,20 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { CategoriesComponent } from './categories/categories.component';
-import { CategoryDetailComponent } from './category-detail/category-detail.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CategoryButtonComponent } from './category-button/category-button.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CategoriesDisplayComponent } from './categories-display/categories-display.component';
+import { MobileNumberInputComponent } from './mobile-number-input/mobile-number-input.component';
+import { MoneyAmountInputComponent } from './money-amount-input/money-amount-input.component';
+import { IdNumberInputComponent } from './id-number-input/id-number-input.component';
+import { AccountNumberInputComponent } from './account-number-input/account-number-input.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    CategoriesComponent,
-    CategoryDetailComponent
+    CategoryButtonComponent,
+    CategoriesDisplayComponent,
+    MobileNumberInputComponent,
+    MoneyAmountInputComponent,
+    IdNumberInputComponent,
+    AccountNumberInputComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

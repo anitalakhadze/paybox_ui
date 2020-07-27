@@ -1,0 +1,25 @@
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { MobileNumberInputComponent } from './mobile-number-input.component';
+
+describe('MobileNumberInputComponent', () => {
+  let component: MobileNumberInputComponent;
+  let fixture: ComponentFixture<MobileNumberInputComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ MobileNumberInputComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(MobileNumberInputComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
