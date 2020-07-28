@@ -1,8 +1,10 @@
 <div class="card" style="width: 18rem;">
-  <div class="card-body ">
+  <div class="card-body">
     <h5 class="card-title"><b>{{ category.name }}</b></h5>
-    <p class="card-text">It has an ID of '{{ category.id }}'.</p>
-    <!-- <a routerLink="/{{category.id}}" routerLinkActive="active" class="stretched-link"></a> -->
-    <a href="/{{category.id}}" class="stretched-link"></a>
+      <div>
+        <!-- <p class="card-text">It has an ID of '{{ category.id }}'.</p> -->
+        <a routerLink="/{{category.id}}" routerLinkActive="active" class="stretched-link"></a>
+        <!-- <a href="/{{category.id}}" class="stretched-link"></a> -->
+      </div>
   </div>
 </div>

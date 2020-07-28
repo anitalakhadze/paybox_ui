@@ -8,10 +8,54 @@
 
 .toolbar {
     background-image: linear-gradient(to right,#8edc12 0%,#05afe9 100%);
+    text-decoration: none;
+    height: 50px;
+    font-size: 35px;
+    color: white;
 }
 
 * {
     text-align: center;
     color: white;
     font-weight: bold;
+}
+
+.card-body {
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
+    transition: all 0.5s;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23);
+} 
+
+.card-body .card-title {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.card-body .card-title:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.card-body:hover .card-title{
+    padding-right: 25px;
+}
+
+.card-body:hover .card-title:after{
+    opacity: 1;
+    right: 0;
+}
+
+a.deco-none {
+    color:white !important;
+    text-decoration:none;
 }

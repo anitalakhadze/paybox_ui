@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'; // CLI imports router
 import { HomeComponent } from './home/home.component'
-import { MobilePaymentComponent } from './mobile-payment/mobile-payment.component'
 import { MobilePaymentPageComponent } from './mobile-payment-page/mobile-payment-page.component'
+import { CharityPaymentPageComponent } from './charity-payment-page/charity-payment-page.component'
+import { CommunalPaymentPageComponent } from './communal-payment-page/communal-payment-page.component'
+import { FinancialPaymentPageComponent } from './financial-payment-page/financial-payment-page.component'
+
 
 const routes: Routes = [
   {
@@ -15,15 +18,15 @@ const routes: Routes = [
   },
   {
     path: 'charity_payment',
-    component: MobilePaymentComponent,
+    component: CharityPaymentPageComponent,
   },
   {
     path: 'communal_payment',
-    component: MobilePaymentComponent,
+    component: CommunalPaymentPageComponent,
   },
   {
     path: 'financial_payment',
-    component: MobilePaymentComponent,
+    component: FinancialPaymentPageComponent,
   },
 ]; // sets up routes constant where you define your routes
 

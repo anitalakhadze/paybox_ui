@@ -1,36 +1,11 @@
 
 <!-- Toolbar -->
-<div class="toolbar" role="banner">
-  
-  <span>PAYBOX</span>
-
-</div>
+<nav class="toolbar" role="banner">
+  <a routerLink="/" class="deco-none">PAYBOX</a>
+</nav>
 
 <div class="content" role="main">
-<div class="container">
-
-  <app-categories-display>
-  </app-categories-display>
-
-  <!-- <nav>
-    <ul>
-      <li>
-        <a routerLink="/mobile_payment" routerLinkActive="active">Mobile</a>
-      </li>
-      <li>
-        <a routerLink="/charity_payment" routerLinkActive="active">Charity</a>
-      </li>
-      <li>
-        <a routerLink="/communal_payment" routerLinkActive="active">Communal</a>
-      </li>
-      <li>
-        <a routerLink="/financial_payment" routerLinkActive="active">Financial</a>
-      </li>
-      <li>
-        <a routerLink="/" routerLinkActive="active">Home</a>
-      </li>
-    </ul>
-  </nav> -->
-  
+  <div class="container">
+    <router-outlet></router-outlet>
   </div>
 </div>
