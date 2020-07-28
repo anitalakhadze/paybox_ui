@@ -1,9 +1,9 @@
-<p>mobile-payment-page works!</p>
-<nav>
-    <a routerLink="/mobile_payment" routerLinkActive="active"></a>
-</nav>
+<form [formGroup]="mobilePayment" 
+    (ngSubmit)="callingFunction()">
 
-<app-mobile-number-input>here</app-mobile-number-input>
-<app-money-amount-input>here</app-money-amount-input>
+    <app-mobile-number-input>here</app-mobile-number-input>
+    <app-money-amount-input>here</app-money-amount-input>
 
+    <button type="submit">Confirm payment</button>
+</form>
 <!-- <router-outlet></router-outlet> -->

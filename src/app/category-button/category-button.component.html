@@ -3,7 +3,7 @@
     <h5 class="card-title"><b>{{ category.name }}</b></h5>
       <div>
         <!-- <p class="card-text">It has an ID of '{{ category.id }}'.</p> -->
-        <a routerLink="/{{category.id}}" routerLinkActive="active" class="stretched-link"></a>
+        <a [routerLink]="['/payments', category.id]" routerLinkActive="active" class="stretched-link"></a>
         <!-- <a href="/{{category.id}}" class="stretched-link"></a> -->
       </div>
   </div>

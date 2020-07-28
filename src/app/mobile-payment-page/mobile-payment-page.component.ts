@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-mobile-payment-page',
@@ -6,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mobile-payment-page.component.css']
 })
 export class MobilePaymentPageComponent implements OnInit {
+  mobilePayment = new FormGroup({
 
+  })
+
+  callingFunction() {
+
+  }
+  
   constructor() { }
 
   ngOnInit(): void {
