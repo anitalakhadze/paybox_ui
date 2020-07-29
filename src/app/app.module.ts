@@ -11,11 +11,6 @@ import { MobileNumberInputComponent } from './mobile-number-input/mobile-number-
 import { MoneyAmountInputComponent } from './money-amount-input/money-amount-input.component';
 import { IdNumberInputComponent } from './id-number-input/id-number-input.component';
 import { AccountNumberInputComponent } from './account-number-input/account-number-input.component';
-import { HomeComponent } from './home/home.component';
-import { MobilePaymentPageComponent } from './mobile-payment-page/mobile-payment-page.component';
-import { CharityPaymentPageComponent } from './charity-payment-page/charity-payment-page.component';
-import { CommunalPaymentPageComponent } from './communal-payment-page/communal-payment-page.component';
-import { FinancialPaymentPageComponent } from './financial-payment-page/financial-payment-page.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
 
 @NgModule({
@@ -27,11 +22,6 @@ import { PaymentPageComponent } from './payment-page/payment-page.component';
     MoneyAmountInputComponent,
     IdNumberInputComponent,
     AccountNumberInputComponent,
-    HomeComponent,
-    MobilePaymentPageComponent,
-    CharityPaymentPageComponent,
-    CommunalPaymentPageComponent,
-    FinancialPaymentPageComponent,
     PaymentPageComponent
   ],
   imports: [

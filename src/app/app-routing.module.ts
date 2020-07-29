@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'; // CLI imports router
-import { HomeComponent } from './home/home.component'
 import { PaymentPageComponent } from './payment-page/payment-page.component';
+import { CategoriesDisplayComponent } from './categories-display/categories-display.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: CategoriesDisplayComponent,
   },
   {
     path: 'payments/:payment_id',
