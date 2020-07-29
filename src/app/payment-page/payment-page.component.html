@@ -1,21 +1,115 @@
-<!-- <div *ngFor="let component of required_inputs" class="col-6 mb-6">
-    <div class="mt-5">
-        <h2>{{message}}</h2>    
-    </div>
-</div> -->
-
 <div class="container">
 
-    <form action="">
+  <form [formGroup]="paymentForm">
+    <div *ngIf=" requiredInputs.includes('mobileNumber') " class="form-group mt-5">
+      <label for="mobileNumber">Mobile Number</label>
+      <input id="mobileNumber" type="text" class="form-control" 
+      formControlName="mobileNumber"
+        placeholder="Enter mobile number">
 
-        <ng-template></ng-template>
+      <div *ngIf="mobileNumberCtrl.invalid && 
+        (mobileNumberCtrl.dirty || mobileNumberCtrl.touched)" class="alert alert-danger">
 
-        <div class="mt-5">
-            <button type="submit" class="btn btn-primary text-white">
-                Submit
-            </button>
+        <div *ngIf="mobileNumberCtrl.errors.required">
+          Mobile number is required.
         </div>
 
-    </form>
+        <div *ngIf="mobileNumberCtrl.errors.minlength ||
+        mobileNumberCtrl.errors.maxlength">
+          Mobile number must be 9 characters long.
+        </div>
+
+        <div *ngIf="mobileNumberCtrl.errors.pattern">
+          Mobile number must start with "5".
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div *ngIf=" requiredInputs.includes('moneyAmount') " class="form-group mt-5">
+      <label for="moneyAmount">Amount</label>
+      <input id="moneyAmount" type="number" class="form-control" formControlName="moneyAmount"
+        placeholder="Enter amount" (input)="updateCommission()" aria-describedby="commission">
+      <small class="form-text text-muted">Commission:<span #commission></span>GEL</small>
+      <div *ngIf="moneyAmountCtrl.invalid && 
+         (moneyAmountCtrl.dirty || moneyAmountCtrl.touched)" class="alert alert-danger">
+
+        <div *ngIf="moneyAmountCtrl.errors.required">
+          Amount is required.
+        </div>
+
+        <div *ngIf="moneyAmountCtrl.errors.min">
+          Amount should be minimum 1 GEL.
+        </div>
+
+        <div *ngIf="moneyAmountCtrl.errors.max">
+          Amount should be maximum 100 GEL.
+        </div>
+
+      </div>
+    </div>
+
+
+    <div *ngIf=" requiredInputs.includes('idNumber') " class="form-group mt-5">
+      <label for="idNumber">ID Number</label>
+      <input id="idNumber" type="text" class="form-control" formControlName="idNumber" placeholder="Enter ID number">
+
+      <div *ngIf="idNumberCtrl.invalid && 
+        (idNumberCtrl.dirty || idNumberCtrl.touched)" class="alert alert-danger">
+
+        <div *ngIf="idNumberCtrl.errors.required">
+          ID number is required.
+        </div>
+
+        <div *ngIf="idNumberCtrl.errors.minlength ||
+              idNumber.errors.maxlength">
+          ID number must be 11 characters long.
+        </div>
+
+        <div *ngIf="idNumberCtrl.errors.pattern">
+          ID number must contain only digits.
+        </div>
+
+      </div>
+    </div>
+
+
+    <div *ngIf=" requiredInputs.includes('accountNumber') " class="form-group mt-5">
+      <label for="accountNumber">Account Number</label>
+      <input id="accountNumber" type="text" class="form-control" formControlName="accountNumber"
+        placeholder="Enter account number">
+
+      <div *ngIf="accountNumberCtrl.invalid && 
+        (accountNumberCtrl.dirty || accountNumberCtrl.touched)" class="alert alert-danger">
+
+        <div *ngIf="accountNumberCtrl.errors.required">
+          Account number is required.
+        </div>
+
+        <div *ngIf="accountNumberCtrl.errors.minlength ||
+        accountNumber.errors.maxlength">
+          Account number must be valid.
+        </div>
+
+        <div *ngIf="accountNumberCtrl.errors.pattern">
+          Account format is not valid.
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="mt-5">
+      <button type="submit" 
+      class="btn btn-primary text-white"  
+      [disabled]="paymentForm.invalid"
+      (click)="onSubmit(paymentForm.value)">
+        Submit
+      </button>
+    </div>
+
+  </form>
 
 </div>
