@@ -26,3 +26,7 @@ export const REQUIRED_INPUTS = {
         AccountNumberInputComponent,
     ]
 }
+
+export const PAY_API_TEMPLATES = {
+    
+}

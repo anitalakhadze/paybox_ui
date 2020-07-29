@@ -16,28 +16,32 @@
 
 * {
     text-align: center;
-    color: white;
+    /* color: white; */
     font-weight: bold;
 }
 
-.card-body {
+a.deco-none {
+    color:white !important;
+    text-decoration:none;
+}
+
+.btn {
     border-radius: 4px;
     text-align: center;
-    font-weight: bold;
+    font-size: 28px;
     padding: 20px;
     transition: all 0.5s;
     cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23);
-} 
+}
 
-.card-body .card-title {
+.btn span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
 
-.card-body .card-title:after {
+.btn span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
@@ -46,16 +50,11 @@
     transition: 0.5s;
 }
 
-.card-body:hover .card-title{
+.btn:hover span {
     padding-right: 25px;
 }
 
-.card-body:hover .card-title:after{
+.btn:hover span:after {
     opacity: 1;
     right: 0;
-}
-
-a.deco-none {
-    color:white !important;
-    text-decoration:none;
 }

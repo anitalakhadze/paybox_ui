@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-account-number-input',
@@ -8,11 +8,23 @@ import { FormControl } from '@angular/forms';
 })
 export class AccountNumberInputComponent implements OnInit {
 
-  accountNumberControl = new FormControl('');
+  value = {
+    accountNumber: ""
+  }
+
+  accountNumberControl = new FormControl(
+    this.value.accountNumber, [Validators.required,
+    Validators.pattern("^GE[0-9]{2}[A-Z]{2}[0-9]{16}"),
+    Validators.minLength(22), Validators.maxLength(22)]
+  );
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  get accountNumber() {
+    return this.accountNumberControl.get('accountNumber')
   }
 
 }

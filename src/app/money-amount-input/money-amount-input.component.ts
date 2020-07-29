@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-money-amount-input',
@@ -7,11 +7,24 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./money-amount-input.component.css']
 })
 export class MoneyAmountInputComponent implements OnInit {
-  moneyAmountControl = new FormControl('');
+
+  value = {
+    amount: 0
+  }
+
+  amountControl = new FormControl(
+    this.value.amount, [Validators.required,
+    Validators.min(1), Validators.max(100)]
+  )
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  get amount() {
+    return this.amountControl.get('amount')
+  }
+
 
 }

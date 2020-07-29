@@ -1,10 +1,8 @@
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"><b>{{ category.name }}</b></h5>
-      <div>
-        <!-- <p class="card-text">It has an ID of '{{ category.id }}'.</p> -->
-        <a [routerLink]="['/payments', category.id]" routerLinkActive="active" class="stretched-link"></a>
-        <!-- <a href="/{{category.id}}" class="stretched-link"></a> -->
-      </div>
-  </div>
-</div>
+<button type="button" 
+  class="btn btn-primary btn-lg btn-block">
+  <span>{{ category.name }}</span>
+</button>
+
+<a [routerLink]="['/payments', category.id]" 
+  routerLinkActive="active" class="stretched-link">
+</a>

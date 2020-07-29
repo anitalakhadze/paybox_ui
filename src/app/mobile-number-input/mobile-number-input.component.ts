@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-mobile-number-input',
@@ -7,11 +7,24 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./mobile-number-input.component.css']
 })
 export class MobileNumberInputComponent implements OnInit {
-  mobileNumberControl = new FormControl('');
+
+  value = {
+    mobileNumber: ""
+  }
+
+  mobileNumberControl = new FormControl(
+    this.value.mobileNumber, [Validators.required,
+    Validators.pattern("^5[0-9]{8}$"),
+    Validators.minLength(9), Validators.maxLength(9)]
+  );
+
   constructor() { }
 
   ngOnInit(): void {
+  }
 
+  get mobileNumber(){
+    return this.mobileNumberControl.get('mobileNumber')
   }
 
 }
