@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
-import {Transaction} from './pay-api-templates'
+import { Observable } from 'rxjs';
+import { Transaction } from './pay-api-templates'
 
 @Injectable({
   providedIn: 'root'
