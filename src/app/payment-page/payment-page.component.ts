@@ -1,8 +1,8 @@
-import { Component, OnInit, Type, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GET_REQUIRED_INPUTS } from './required-inputs'
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
-import {PayApiService} from '../pay-api.service'
+import { PayApiService } from '../pay-api.service'
 
 @Component({
   selector: 'app-payment-page',
@@ -30,7 +30,7 @@ export class PaymentPageComponent implements OnInit {
     this.mobileNumberCtrl = this.formBuilder
       .control(null,
       [
-        // Validators.,
+        Validators.required,
         Validators.pattern("^5[0-9]{8}$"),
         Validators.minLength(9), 
         Validators.maxLength(9)
@@ -38,14 +38,14 @@ export class PaymentPageComponent implements OnInit {
     this.moneyAmountCtrl = this.formBuilder
       .control(null,
       [
-        // Validators.required,
+        Validators.required,
         Validators.min(1), 
         Validators.max(100)
       ]);
     this.idNumberCtrl = this.formBuilder
       .control(null, 
       [
-        // Validators.required,
+        Validators.required,
         Validators.pattern("^[0-9]{11}$"),
         Validators.minLength(11), 
         Validators.maxLength(11)
@@ -53,7 +53,7 @@ export class PaymentPageComponent implements OnInit {
     this.accountNumberCtrl = this.formBuilder
     .control(null, 
     [
-      // Validators.required,
+      Validators.required,
       Validators.pattern("^GE[0-9]{2}[A-Z]{2}[0-9]{16}"),
       Validators.minLength(22), 
       Validators.maxLength(22)
