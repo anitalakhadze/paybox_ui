@@ -1,6 +1,7 @@
 <div class="container">
 
   <form [formGroup]="paymentForm">
+
     <div *ngIf=" requiredInputs.includes('mobileNumber') " class="form-group mt-5">
       <label for="mobileNumber">Mobile Number</label>
       <input id="mobileNumber" type="text" class="form-control" 
@@ -32,7 +33,7 @@
       <label for="moneyAmount">Amount</label>
       <input id="moneyAmount" type="number" class="form-control" formControlName="moneyAmount"
         placeholder="Enter amount" (input)="updateCommission()" aria-describedby="commission">
-      <small class="form-text text-muted">Commission:<span #commission></span>GEL</small>
+      <small class="form-text text-muted">Commission: <span #commission></span> GEL</small>
       <div *ngIf="moneyAmountCtrl.invalid && 
          (moneyAmountCtrl.dirty || moneyAmountCtrl.touched)" class="alert alert-danger">
 
