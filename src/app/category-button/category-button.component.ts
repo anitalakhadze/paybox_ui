@@ -6,15 +6,11 @@ import { Category } from '../category';
   templateUrl: './category-button.component.html',
   styleUrls: ['./category-button.component.css']
 })
-export class CategoryButtonComponent implements OnInit {
-  @Input() category: Category = {
-    id: 'mobile_payment',
-    name: "Mobile payments"
-  }
 
-  constructor() {
-  //   this.categoryName = categoryName;
-  }
+export class CategoryButtonComponent implements OnInit {
+  @Input() category: Category;
+
+  constructor() { }
 
   ngOnInit(): void {
   }
