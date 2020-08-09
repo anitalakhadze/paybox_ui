@@ -10,15 +10,9 @@ import { PayApiService } from '../pay-api.service'
   styleUrls: ['./payment-page.component.css'],
 })
 export class PaymentPageComponent implements OnInit {
-  amount: number;
   paymentId: string;
   requiredInputs: string[];
   @ViewChild('commission') commission;
-
-  mobileNumberCtrl: FormControl;
-  moneyAmountCtrl: FormControl;
-  idNumberCtrl: FormControl;
-  accountNumberCtrl: FormControl;
 
   paymentForm: FormGroup;
   
@@ -26,54 +20,46 @@ export class PaymentPageComponent implements OnInit {
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
     private payApiService: PayApiService
-  ) {
-    this.mobileNumberCtrl = this.formBuilder
-      .control(null,
-      [
-        Validators.required,
-        Validators.pattern("^5[0-9]{8}$"),
-        Validators.minLength(9), 
-        Validators.maxLength(9)
-      ]);
-    this.moneyAmountCtrl = this.formBuilder
-      .control(null,
-      [
-        Validators.required,
-        Validators.min(1), 
-        Validators.max(100)
-      ]);
-    this.idNumberCtrl = this.formBuilder
-      .control(null, 
-      [
-        Validators.required,
-        Validators.pattern("^[0-9]{11}$"),
-        Validators.minLength(11), 
-        Validators.maxLength(11)
-      ]);
-    this.accountNumberCtrl = this.formBuilder
-    .control(null, 
-    [
-      Validators.required,
-      Validators.pattern("^GE[0-9]{2}[A-Z]{2}[0-9]{16}"),
-      Validators.minLength(22), 
-      Validators.maxLength(22)
-    ]);
-
-    this.paymentForm = this.formBuilder.group({
-      mobileNumber: this.mobileNumberCtrl,
-      moneyAmount: this.moneyAmountCtrl,
-      commission: 0,
-      accountNumber: this.accountNumberCtrl,
-      idNumber: this.idNumberCtrl,
-    });
-  }
+  ) {  }
   
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.paymentId = params['payment_id']
       this.requiredInputs =  GET_REQUIRED_INPUTS[this.paymentId]
     })
+
+    this.paymentForm = this.formBuilder.group({
+      mobileNumber: [null, [
+        Validators.required,
+        Validators.pattern("^5[0-9]{8}$"),
+        Validators.minLength(9), 
+        Validators.maxLength(9)
+      ]],
+      moneyAmount: [null,[
+        Validators.required,
+        Validators.min(1), 
+        Validators.max(100)
+      ]],
+      commission: 0,
+      idNumber: [null, [
+        Validators.required,
+        Validators.pattern("^[0-9]{11}$"),
+        Validators.minLength(11), 
+        Validators.maxLength(11)
+      ]],
+      accountNumber: [null, [
+        Validators.required,
+        Validators.pattern("^GE[0-9]{2}[A-Z]{2}[0-9]{16}"),
+        Validators.minLength(22), 
+        Validators.maxLength(22)
+      ]],
+    });
   }
+
+  get mobileNumber() { return this.paymentForm.get('mobileNumber'); }
+  get moneyAmount() { return this.paymentForm.get('moneyAmount'); }
+  get idNumber() { return this.paymentForm.get('idNumber'); }
+  get accountNumber() { return this.paymentForm.get('accountNumber'); }
 
   onSubmit(paymentData) {
     if (this.paymentForm.valid) {

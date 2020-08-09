@@ -4,23 +4,23 @@
 
     <div *ngIf=" requiredInputs.includes('mobileNumber') " class="form-group mt-5">
       <label for="mobileNumber">Mobile Number</label>
-      <input id="mobileNumber" type="text" class="form-control" 
+      <input type="text" class="form-control" 
       formControlName="mobileNumber"
-        placeholder="Enter mobile number">
+        placeholder="Enter mobile number"/>
 
-      <div *ngIf="mobileNumberCtrl.invalid && 
-        (mobileNumberCtrl.dirty || mobileNumberCtrl.touched)" class="alert alert-danger">
+      <div *ngIf="mobileNumber.invalid && 
+        (mobileNumber.dirty || mobileNumber.touched)" class="alert alert-danger">
 
-        <div *ngIf="mobileNumberCtrl.errors.required">
+        <div *ngIf="mobileNumber.errors.required">
           Mobile number is required.
         </div>
 
-        <div *ngIf="mobileNumberCtrl.errors.minlength ||
-        mobileNumberCtrl.errors.maxlength">
+        <div *ngIf="mobileNumber.errors.minlength ||
+        mobileNumber.errors.maxlength">
           Mobile number must be 9 characters long.
         </div>
 
-        <div *ngIf="mobileNumberCtrl.errors.pattern">
+        <div *ngIf="mobileNumber.errors.pattern">
           Mobile number must start with "5".
         </div>
 
@@ -34,18 +34,18 @@
       <input id="moneyAmount" type="number" class="form-control" formControlName="moneyAmount"
         placeholder="Enter amount" (input)="updateCommission()" aria-describedby="commission">
       <small class="form-text text-muted">Commission: <span #commission></span> GEL</small>
-      <div *ngIf="moneyAmountCtrl.invalid && 
-         (moneyAmountCtrl.dirty || moneyAmountCtrl.touched)" class="alert alert-danger">
+      <div *ngIf="moneyAmount.invalid && 
+         (moneyAmount.dirty || moneyAmount.touched)" class="alert alert-danger">
 
-        <div *ngIf="moneyAmountCtrl.errors.required">
+        <div *ngIf="moneyAmount.errors.required">
           Amount is required.
         </div>
 
-        <div *ngIf="moneyAmountCtrl.errors.min">
+        <div *ngIf="moneyAmount.errors.min">
           Amount should be minimum 1 GEL.
         </div>
 
-        <div *ngIf="moneyAmountCtrl.errors.max">
+        <div *ngIf="moneyAmount.errors.max">
           Amount should be maximum 100 GEL.
         </div>
 
@@ -57,19 +57,19 @@
       <label for="idNumber">ID Number</label>
       <input id="idNumber" type="text" class="form-control" formControlName="idNumber" placeholder="Enter ID number">
 
-      <div *ngIf="idNumberCtrl.invalid && 
-        (idNumberCtrl.dirty || idNumberCtrl.touched)" class="alert alert-danger">
+      <div *ngIf="idNumber.invalid && 
+        (idNumber.dirty || idNumber.touched)" class="alert alert-danger">
 
-        <div *ngIf="idNumberCtrl.errors.required">
+        <div *ngIf="idNumber.errors.required">
           ID number is required.
         </div>
 
-        <div *ngIf="idNumberCtrl.errors.minlength ||
-              idNumber.errors.maxlength">
+        <div *ngIf="idNumber.errors.minlength ||
+        idNumber.errors.maxlength">
           ID number must be 11 characters long.
         </div>
 
-        <div *ngIf="idNumberCtrl.errors.pattern">
+        <div *ngIf="idNumber.errors.pattern">
           ID number must contain only digits.
         </div>
 
@@ -82,19 +82,19 @@
       <input id="accountNumber" type="text" class="form-control" formControlName="accountNumber"
         placeholder="Enter account number">
 
-      <div *ngIf="accountNumberCtrl.invalid && 
-        (accountNumberCtrl.dirty || accountNumberCtrl.touched)" class="alert alert-danger">
+      <div *ngIf="accountNumber.invalid && 
+        (accountNumber.dirty || accountNumber.touched)" class="alert alert-danger">
 
-        <div *ngIf="accountNumberCtrl.errors.required">
+        <div *ngIf="accountNumber.errors.required">
           Account number is required.
         </div>
 
-        <div *ngIf="accountNumberCtrl.errors.minlength ||
+        <div *ngIf="accountNumber.errors.minlength ||
         accountNumber.errors.maxlength">
           Account number must be valid.
         </div>
 
-        <div *ngIf="accountNumberCtrl.errors.pattern">
+        <div *ngIf="accountNumber.errors.pattern">
           Account format is not valid.
         </div>
 
